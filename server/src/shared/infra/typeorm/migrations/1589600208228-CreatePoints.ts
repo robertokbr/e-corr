@@ -14,7 +14,7 @@ export default class CreatePoints1589600208228 implements MigrationInterface {
             default: 'uuid_generate_v4()',
           },
           {
-            name: 'pcitures',
+            name: 'pictures',
             type: 'varchar',
           },
           {
