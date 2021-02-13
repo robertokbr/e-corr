@@ -15,7 +15,7 @@ class Point {
   title: string;
 
   @Column()
-  pcitures: string;
+  pictures: string;
 
   @Column()
   description: string;
@@ -24,10 +24,10 @@ class Point {
   price: string;
 
   @Column()
-  category: string;
+  category: 'Condominio' | 'Apartamento' | 'Casa' | 'Comercial';
 
   @Column()
-  type: string;
+  type: 'Aluguel' | 'Venda';
 
   @Column()
   adress: string;
