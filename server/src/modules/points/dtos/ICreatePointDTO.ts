@@ -1,4 +1,5 @@
 interface ICreatePointDTO {
+  user_id: string;
   title: string;
   pictures: string;
   description: string;
