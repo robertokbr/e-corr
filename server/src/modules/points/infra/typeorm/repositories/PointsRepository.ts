@@ -9,7 +9,7 @@ class PointsRepository implements IPointsRepository {
     this.ormRepository = getRepository(Point);
   }
 
-  public async create(data: ICreatePointDTO) {
+  public async createPoint(data: ICreatePointDTO) {
     const point = this.ormRepository.create(data);
 
     await this.ormRepository.save(point);
@@ -21,6 +21,10 @@ class PointsRepository implements IPointsRepository {
     const points = await this.ormRepository.find();
 
     return points;
+  }
+
+  public async deletePoint(point_id: string) {
+    await this.ormRepository.delete(point_id);
   }
 }
 
