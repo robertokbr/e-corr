@@ -1,25 +1,23 @@
-import ensureAuthenticated from '@shared/infra/http/middleware/ensureAuthenticated';
 import { Router } from 'express';
+import multer from 'multer';
+
+import uploadConfig from '@config/upload';
+import ensureAuthenticated from '@shared/infra/http/middleware/ensureAuthenticated';
 import PointsRepository from '../../typeorm/repositories/PointsRepository';
+import PointsController from '../controllers/PointsController';
 
 const pointsRouter = Router();
+const upload = multer(uploadConfig);
 
-pointsRouter.post('/', ensureAuthenticated, async (request, response) => {
-  const createPointData = request.body as ICreatePointDTO;
+const pointsController = new PointsController();
 
-  const pointsRepository = new PointsRepository();
-
-  const point = await pointsRepository.create(createPointData);
-
-  return response.status(201).json(point);
-});
+pointsRouter.post(
+  '/',
+  ensureAuthenticated,
+  upload.array('pictures', 6),
+  pointsController.create,
+);
 
 export default pointsRouter;
 
-pointsRouter.get('/', async (request, response) => {
-  const pointsRepository = new PointsRepository();
-
-  const points = await pointsRepository.getAllPoints();
-
-  return response.json(points);
-});
+pointsRouter.get('/', pointsController.index);
