@@ -4,12 +4,23 @@ import {
   Entity,
   PrimaryGeneratedColumn,
   UpdateDateColumn,
+  ManyToOne,
+  JoinColumn,
 } from 'typeorm';
 
-@Entity('point')
+import User from '@modules/users/infra/typeorm/entities/User';
+
+@Entity('points')
 class Point {
   @PrimaryGeneratedColumn('uuid')
   id: string;
+
+  @Column()
+  user_id: string;
+
+  @ManyToOne(() => User, user => user.points, { eager: true })
+  @JoinColumn({ name: 'user_id' })
+  user: User;
 
   @Column()
   title: string;
