@@ -4,7 +4,7 @@
 "port": 5432,
 "username": "postgres",
 "password": "docker",
-"database": "postgres",
+"database": "ecorr",
 "entities": [
   "./src/modules/**/infra/typeorm/entities/*.ts"
 ],
@@ -13,7 +13,7 @@
 "./src/shared/infra/typeorm/migrations/*.ts"
 ],
 
-  "cli": {
-    "migrationsDir": "./src/shared/infra/typeorm/migrations"
-  }
+"cli": {
+  "migrationsDir": "./src/shared/infra/typeorm/migrations"
+}
 }
