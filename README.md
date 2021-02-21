@@ -1,5 +1,5 @@
 # E-Corr
-An application that provides a simple way to share and find property
+An application that provides a simple way to share and find properties.
 
 ## Contributors
 
