@@ -12,9 +12,11 @@ An application that provides a simple way to share and find property
 
 | [<img src="https://avatars.githubusercontent.com/u/60328400?s=460&u=b77b84078440e8a7027818c22475132ecbe2d992&v=4" width="115"><br><sub>@robertokbr</sub>](https://github.com/robertokbr) |
 | :---: |
+
+
 ## 🤖 Backend beta use
 
-- Usuário
+- User
     - Create User
 
         ```jsx
@@ -54,6 +56,32 @@ An application that provides a simple way to share and find property
         avatar: Image File
         ```
 
-    ## 🏗️ To do
+- Point
+    - Create Point
 
-    - Add entity ```attributes```, a Point relation.
+        ```jsx
+        POST '/points'
+
+        Form URL Encoded
+
+        user_id: string,
+        address: string,
+        category: string,
+        description: string,
+        latitude: string,
+        longitude: string,
+        pictures: Image File Array,
+        price: string,
+        title: string,
+        type: string,
+        ```
+
+    - Get Points
+
+        ```jsx
+        GET '/points'
+        ```
+
+## 🏗️ To do
+
+- Add entity ```attributes```, a Point relation.
