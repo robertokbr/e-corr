@@ -6,7 +6,7 @@ interface ICreatePointDTO {
   price: string;
   category: 'Condominio' | 'Apartamento' | 'Casa' | 'Comercial';
   type: 'Aluguel' | 'Venda';
-  adress: string;
+  address: string;
   longitude: string;
   latitude: string;
 }

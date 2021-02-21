@@ -41,7 +41,7 @@ class Point {
   type: 'Aluguel' | 'Venda';
 
   @Column()
-  adress: string;
+  address: string;
 
   @Column()
   longitude: string;

@@ -7,7 +7,7 @@ import PointsRepository from '../../typeorm/repositories/PointsRepository';
 class PointsController {
   public async create(request: Request, response: Response): Promise<Response> {
     const {
-      adress,
+      address,
       user_id,
       type,
       title,
@@ -26,7 +26,7 @@ class PointsController {
 
     const point = await createPointService.execute({
       pictures,
-      adress,
+      address,
       user_id,
       type,
       title,

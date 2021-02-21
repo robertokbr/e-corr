@@ -19,7 +19,7 @@ class CreatePointService {
 
   public async execute({
     user_id,
-    adress,
+    address,
     category,
     description,
     latitude,
@@ -39,7 +39,7 @@ class CreatePointService {
 
     const point = await this.pointsRepository.createPoint({
       pictures: serializedPictures,
-      adress,
+      address,
       category,
       description,
       latitude,
