@@ -12,8 +12,7 @@ An application that provides a simple way to share and find property
 
 | [<img src="https://avatars.githubusercontent.com/u/60328400?s=460&u=b77b84078440e8a7027818c22475132ecbe2d992&v=4" width="115"><br><sub>@robertokbr</sub>](https://github.com/robertokbr) |
 | :---: |
-
-### 🤖 Backend beta
+## 🤖 Backend beta use
 
 - Usuário
     - Create User
@@ -31,10 +30,7 @@ An application that provides a simple way to share and find property
         }
         ```
 
-        ```jsx
-        //Hash aleatório de um site gerador de hash
-        secret: 277b2cebde8a62e227ac7b1e5ed2a4e5
-        ```
+    - Auth User
 
         ```jsx
         POST **'/sessions'
@@ -56,32 +52,6 @@ An application that provides a simple way to share and find property
         Form URL Encoded
 
         avatar: Image File
-        ```
-
-- Ponto
-    - Create Point
-
-        ```jsx
-        POST '/points'
-
-        Form URL Encoded
-
-        user_id: string,
-        address: string,
-        category: string,
-        description: string,
-        latitude: string,
-        longitude: string,
-        pictures: Image File Array,
-        price: string,
-        title: string,
-        type: string,
-        ```
-
-    - Get Points
-
-        ```jsx
-        GET '/points'
         ```
 
     ## 🏗️ To do
