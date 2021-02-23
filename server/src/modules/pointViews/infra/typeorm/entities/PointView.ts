@@ -17,8 +17,8 @@ class PointViews {
   @Column()
   point_id: string;
 
-  @ManyToOne(() => Point, point => point.views, { eager: true })
-  @JoinColumn({ name: 'user_id' })
+  @ManyToOne(() => Point)
+  @JoinColumn({ name: 'point_id' })
   points: Point;
 
   @CreateDateColumn()

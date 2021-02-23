@@ -24,9 +24,6 @@ class Point {
   @JoinColumn({ name: 'user_id' })
   user: User;
 
-  @OneToMany(() => PointViews, pointViews => pointViews.points)
-  views: number;
-
   @Column()
   title: string;
 
