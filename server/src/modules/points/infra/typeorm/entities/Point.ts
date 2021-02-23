@@ -5,10 +5,12 @@ import {
   PrimaryGeneratedColumn,
   UpdateDateColumn,
   ManyToOne,
+  OneToMany,
   JoinColumn,
 } from 'typeorm';
 
 import User from '@modules/users/infra/typeorm/entities/User';
+import PointViews from '@modules/pointViews/infra/typeorm/entities/PointView';
 
 @Entity('points')
 class Point {
@@ -21,6 +23,9 @@ class Point {
   @ManyToOne(() => User, user => user.points, { eager: true })
   @JoinColumn({ name: 'user_id' })
   user: User;
+
+  @OneToMany(() => PointViews, pointViews => pointViews.points)
+  views: number;
 
   @Column()
   title: string;
