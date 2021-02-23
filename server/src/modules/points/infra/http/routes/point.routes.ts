@@ -10,12 +10,7 @@ const upload = multer(uploadConfig);
 
 const pointsController = new PointsController();
 
-pointsRouter.post(
-  '/',
-  ensureAuthenticated,
-  upload.array('pictures', 6),
-  pointsController.create,
-);
+pointsRouter.post('/', ensureAuthenticated, pointsController.create);
 
 pointsRouter.get('/', pointsController.index);
 

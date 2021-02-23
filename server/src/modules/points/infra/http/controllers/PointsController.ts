@@ -7,6 +7,7 @@ import PointsRepository from '../../typeorm/repositories/PointsRepository';
 class PointsController {
   public async create(request: Request, response: Response): Promise<Response> {
     const {
+      pictures,
       address,
       user_id,
       type,
@@ -18,9 +19,9 @@ class PointsController {
       category,
     } = request.body;
 
-    const files = request.files as Express.Multer.File[];
+    // const files = request.files as Express.Multer.File[];
 
-    const pictures = files.map(file => file.filename);
+    // const pictures = files.map(file => file.filename);
 
     const createPointService = container.resolve(CreatePointService);
 
@@ -48,9 +49,7 @@ class PointsController {
     const points = await pointsRepository.getAllPoints();
 
     const serializedPoints = points.map(point => {
-      const images = point.pictures
-        .split('&')
-        .map(picture => `${`${url}/files/${picture}`}`);
+      const images = point.pictures.split('&');
 
       // @ts-ignore
       delete point.user.password;
