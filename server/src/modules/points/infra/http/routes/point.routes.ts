@@ -3,7 +3,6 @@ import multer from 'multer';
 
 import uploadConfig from '@config/upload';
 import ensureAuthenticated from '@shared/infra/http/middleware/ensureAuthenticated';
-import PointsRepository from '../../typeorm/repositories/PointsRepository';
 import PointsController from '../controllers/PointsController';
 
 const pointsRouter = Router();
@@ -18,6 +17,6 @@ pointsRouter.post(
   pointsController.create,
 );
 
-export default pointsRouter;
-
 pointsRouter.get('/', pointsController.index);
+
+export default pointsRouter;

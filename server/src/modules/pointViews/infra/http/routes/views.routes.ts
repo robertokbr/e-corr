@@ -12,7 +12,7 @@ viewsRouter.post('/', async (request: Request, response: Response) => {
 
   const views = await pointViewsRepository.getNumberOfViews(point_id);
 
-  return views;
+  return response.status(201).json(views);
 });
 
 export default viewsRouter;
