@@ -6,7 +6,7 @@ export default class CraeteUserPointRelation1589841551441
     await queryRunner.createForeignKey(
       'points',
       new TableForeignKey({
-        name: 'Point_User',
+        name: 'point_user',
         columnNames: ['user_id'],
         referencedColumnNames: ['id'],
         referencedTableName: 'users',
@@ -14,9 +14,21 @@ export default class CraeteUserPointRelation1589841551441
         onUpdate: 'CASCADE',
       }),
     );
+    await queryRunner.createForeignKey(
+      'point_views',
+      new TableForeignKey({
+        name: 'point_Point_views',
+        columnNames: ['point_id'],
+        referencedColumnNames: ['id'],
+        referencedTableName: 'points',
+        onDelete: 'SET NULL',
+        onUpdate: 'CASCADE',
+      }),
+    );
   }
 
   public async down(queryRunner: QueryRunner): Promise<void> {
-    await queryRunner.dropForeignKey('points', 'Point_User');
+    await queryRunner.dropForeignKey('points', 'point_user');
+    await queryRunner.dropForeignKey('point_views', 'point_Point_views');
   }
 }
