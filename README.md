@@ -1,22 +1,20 @@
+<h1 align="center">
+    <img src="https://github.com/robertokbr/E-Corr/blob/main/mobile/assets/icon.png" width="100px" /><br>
+    <br>
+  <a href="https://e-corr.netlify.app/">
+    E-Corr
+  <a/>
+</h1>
+
+
 # E-Corr
 An application that provides a simple way to share and find properties.
 
-## Contributors
-
-| [<img src="https://avatars.githubusercontent.com/u/66119996?s=460&u=a8ce982627187de5c6b55f1694eae0d15a1e33cf&v=4" width="115"><br><sub>@hen-tr</sub>](https://github.com/hen-tr) |
-| :---: |
 
 
+## 🤖 Backend beta
 
-## Author
-
-| [<img src="https://avatars.githubusercontent.com/u/60328400?s=460&u=b77b84078440e8a7027818c22475132ecbe2d992&v=4" width="115"><br><sub>@robertokbr</sub>](https://github.com/robertokbr) |
-| :---: |
-
-
-## 🤖 Backend beta use
-
-- User
+- Usuário
     - Create User
 
         ```jsx
@@ -56,7 +54,7 @@ An application that provides a simple way to share and find properties.
         avatar: Image File
         ```
 
-- Point
+- Ponto
     - Create Point
 
         ```jsx
@@ -82,6 +80,37 @@ An application that provides a simple way to share and find properties.
         GET '/points'
         ```
 
+- Point Views
+    - Create Point View
+
+        ```jsx
+        POST /views
+
+        JSON BODY
+
+        {
+        	point_id: string
+        }
+        ```
+
+    - Get Point Views
+
+        ```jsx
+        GET /views/:point_id
+        ```
 ## 🏗️ To do
 
-- Add entity ```attributes```, a Point relation.
+- Add entity ```attributes```( a Point relation ).
+
+
+## Contributors
+
+| [<img src="https://avatars.githubusercontent.com/u/66119996?s=460&u=a8ce982627187de5c6b55f1694eae0d15a1e33cf&v=4" width="115"><br><sub>@hen-tr</sub>](https://github.com/hen-tr) |
+| :---: |
+
+
+
+## Author
+
+| [<img src="https://avatars.githubusercontent.com/u/60328400?s=460&u=b77b84078440e8a7027818c22475132ecbe2d992&v=4" width="115"><br><sub>@robertokbr</sub>](https://github.com/robertokbr) |
+| :---: |
