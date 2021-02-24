@@ -9,7 +9,7 @@ class DiskStorageProvider implements IStorageProvider {
       path.resolve(uploadConfig.uploadFolder, fileName),
     );
 
-    return fileName.concat('/uploads');
+    return fileName;
   }
 
   public async deleteFile(fileName: string): Promise<void> {
