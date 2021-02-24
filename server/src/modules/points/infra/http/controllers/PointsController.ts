@@ -7,7 +7,6 @@ import PointsRepository from '../../typeorm/repositories/PointsRepository';
 class PointsController {
   public async create(request: Request, response: Response): Promise<Response> {
     const {
-      pictures,
       address,
       user_id,
       type,
@@ -19,9 +18,9 @@ class PointsController {
       category,
     } = request.body;
 
-    // const files = request.files as Express.Multer.File[];
+    const files = request.files as Express.Multer.File[];
 
-    // const pictures = files.map(file => file.filename);
+    const pictures = files.map(file => file.filename);
 
     const createPointService = container.resolve(CreatePointService);
 

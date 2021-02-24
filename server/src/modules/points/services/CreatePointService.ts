@@ -31,11 +31,11 @@ class CreatePointService {
   }: Request): Promise<Point> {
     const serializedPictures = pictures.join('&');
 
-    // await Promise.all(
-    //   pictures.map(async picture => {
-    //     this.storageProvider.saveFile(picture);
-    //   }),
-    // );
+    await Promise.all(
+      pictures.map(async picture => {
+        this.storageProvider.saveFile(picture);
+      }),
+    );
 
     const point = await this.pointsRepository.createPoint({
       pictures: serializedPictures,

@@ -7,11 +7,11 @@ class UserAvatarController {
   public async update(request: Request, response: Response): Promise<Response> {
     const updateUserAvatarService = container.resolve(UpdateUserAvatarService);
 
-    const { avatar } = request.body;
+    const { filename } = request.file;
 
     const user = await updateUserAvatarService.execute({
       user_id: request.user.id,
-      avatarfilename: avatar,
+      avatarfilename: filename,
     });
 
     user.password = '';
