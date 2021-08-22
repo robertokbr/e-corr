@@ -20,46 +20,32 @@ class PointsController {
 
     const files = request.files as Express.Multer.File[];
 
-    const pictures = files.map(file => file.filename);
+    const images = files.map(file => file.filename);
 
     const createPointService = container.resolve(CreatePointService);
 
     const point = await createPointService.execute({
-      pictures,
-      address,
-      user_id,
-      type,
-      title,
-      price,
+      description,
       longitude,
       latitude,
-      description,
       category,
+      user_id,
+      address,
+      images,
+      title,
+      price,
+      type,
     });
 
     return response.status(201).json(point);
   }
 
-  public async index(request: Request, response: Response): Promise<Response> {
-    const url = process.env.APP_URL;
-
+  public async index(_: Request, response: Response): Promise<Response> {
     const pointsRepository = new PointsRepository();
 
     const points = await pointsRepository.getAllPoints();
 
-    const serializedPoints = points.map(point => {
-      const images = point.pictures.split('&');
-
-      // @ts-ignore
-      delete point.user.password;
-
-      return {
-        ...point,
-        images,
-      };
-    });
-
-    return response.json(serializedPoints);
+    return response.json(points);
   }
 }
 

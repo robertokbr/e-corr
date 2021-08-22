@@ -9,8 +9,32 @@ class PointsRepository implements IPointsRepository {
     this.ormRepository = getRepository(Point);
   }
 
-  public async createPoint(data: ICreatePointDTO) {
-    const point = this.ormRepository.create(data);
+  public async createPoint({
+    address,
+    category,
+    description,
+    latitude,
+    longitude,
+    price,
+    title,
+    type,
+    user_id,
+    pointImages,
+  }: ICreatePointDTO) {
+    const point = this.ormRepository.create({
+      address,
+      category,
+      description,
+      latitude,
+      longitude,
+      price,
+      title,
+      type,
+      user_id,
+      pointImages: pointImages.map(image_url => ({
+        image_url,
+      })),
+    });
 
     await this.ormRepository.save(point);
 

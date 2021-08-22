@@ -10,7 +10,8 @@ import {
 } from 'typeorm';
 
 import User from '@modules/users/infra/typeorm/entities/User';
-import PointViews from '@modules/pointViews/infra/typeorm/entities/PointView';
+import PointImage from './PointImage';
+import PointViews from './PointView';
 
 @Entity('points')
 class Point {
@@ -24,11 +25,20 @@ class Point {
   @JoinColumn({ name: 'user_id' })
   user: User;
 
-  @Column()
-  title: string;
+  @OneToMany(() => PointImage, pointImage => pointImage.point, {
+    cascade: true,
+    eager: true,
+  })
+  pointImages: PointImage[];
+
+  @OneToMany(() => PointViews, pointViews => pointViews.point, {
+    cascade: true,
+    eager: true,
+  })
+  pointViews: PointViews[];
 
   @Column()
-  pictures: string;
+  title: string;
 
   @Column()
   description: string;

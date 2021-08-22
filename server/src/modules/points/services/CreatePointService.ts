@@ -3,8 +3,8 @@ import Point from '../infra/typeorm/entities/Point';
 
 import IPointsRepository from '../repositories/IPointsRepository';
 
-interface Request extends Omit<ICreatePointDTO, 'pictures'> {
-  pictures: string[];
+interface Request extends Omit<ICreatePointDTO, 'pointImages'> {
+  images: string[];
 }
 
 @injectable()
@@ -18,36 +18,32 @@ class CreatePointService {
   ) {}
 
   public async execute({
-    user_id,
-    address,
-    category,
     description,
-    latitude,
     longitude,
-    pictures,
+    category,
+    latitude,
+    address,
+    user_id,
+    images,
     price,
     title,
     type,
   }: Request): Promise<Point> {
-    const serializedPictures = pictures.join('&');
-
-    await Promise.all(
-      pictures.map(async picture => {
-        this.storageProvider.saveFile(picture);
-      }),
+    const pointImages = await Promise.all(
+      images.map(image => this.storageProvider.saveFile(image)),
     );
 
     const point = await this.pointsRepository.createPoint({
-      pictures: serializedPictures,
-      address,
-      category,
       description,
-      latitude,
+      pointImages,
       longitude,
+      category,
+      latitude,
+      address,
+      user_id,
       price,
       title,
       type,
-      user_id,
     });
 
     return point;
