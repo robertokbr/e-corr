@@ -10,8 +10,8 @@
 # E-Corr
 A Fullstack application that provides a simple way to share and find properties.
 
-<img  src="https://github.com/robertokbr/e-corr/tree/main/.Github/map.png" />
-<img  src="https://github.com/robertokbr/e-corr/tree/main/.Github/details.png" />
+<img  src="https://github.com/robertokbr/e-corr/blob/main/.Github/map.png" />
+<img  src="https://github.com/robertokbr/e-corr/blob/main/.Github/details.png" />
 
 ## 🤖 Backend beta
 
