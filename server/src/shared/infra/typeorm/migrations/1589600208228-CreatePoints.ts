@@ -19,10 +19,6 @@ export default class CreatePoints1589600208228 implements MigrationInterface {
             isNullable: true,
           },
           {
-            name: 'pictures',
-            type: 'varchar',
-          },
-          {
             name: 'title',
             type: 'varchar',
           },
