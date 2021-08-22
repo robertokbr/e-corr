@@ -8,9 +8,10 @@
 
 
 # E-Corr
-An application that provides a simple way to share and find properties.
+A Fullstack application that provides a simple way to share and find properties.
 
-
+<img  src="https://github.com/robertokbr/e-corr/tree/main/.Github/map.png" />
+<img  src="https://github.com/robertokbr/e-corr/tree/main/.Github/details.png" />
 
 ## 🤖 Backend beta
 
@@ -101,6 +102,43 @@ An application that provides a simple way to share and find properties.
 ## 🏗️ To do
 
 - Add entity ```attributes```( a Point relation ).
+
+
+## 🧰 How to run the API
+
+### With docker compose
+```bash
+    # Set up server and database
+    $ docker-compose up -d
+```
+```bash
+    # Come inside the server container
+    $ docker exec -it ecorr /bin/bash
+```
+```bash
+    # run migrations
+    $ npm run typeorm migration:run 
+```
+### Without docker compose
+```bash
+    # Install dependencies 
+    $ npm install
+```
+```bash
+    # With you do not have a postgres db, that is the command to start a docker postgres
+    docker run --name ecorr_postgres -e POSTGRES_PASSWORD=docker -e POSTGRES_DB=ecorr -p 5432:54
+    32 -d postgres
+```
+```bash
+    # run migrations
+    $ npm run typeorm migration:run 
+```
+```bash
+    # build application & start
+    $ npm run build && npm start
+```
+
+## 🧰 How to run the API
 
 
 ## Contributors
