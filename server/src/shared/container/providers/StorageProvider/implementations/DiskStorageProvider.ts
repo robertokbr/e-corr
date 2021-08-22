@@ -9,7 +9,9 @@ class DiskStorageProvider implements IStorageProvider {
       path.resolve(uploadConfig.uploadFolder, fileName),
     );
 
-    return fileName;
+    const file_url = `http://localhost:${process.env.PORT}/files/${fileName}`;
+
+    return file_url;
   }
 
   public async deleteFile(fileName: string): Promise<void> {
