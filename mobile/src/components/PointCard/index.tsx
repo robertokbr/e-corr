@@ -31,7 +31,7 @@ const PointCard: React.FC<{ point: Point }> = ({ point }) => {
 
   return (
     <S.Container onPress={() => handleNavigate(point)}>
-      <PointCardImage image={point.images[0]} />
+      <PointCardImage image={point.pointImages[0].image_url} />
       <S.TextBox>
         <S.Title>
           {point.type} | {point.title}

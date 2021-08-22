@@ -6,7 +6,9 @@ declare type Point = {
   description: string;
   latitude: number;
   longitude: number;
-  images: string[];
+  pointImages: Array<{
+    image_url: string;
+  }>;
   price: string;
   title: string;
   type: string;
