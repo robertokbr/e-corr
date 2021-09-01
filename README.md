@@ -138,8 +138,22 @@ A Fullstack application that provides a simple way to share and find properties.
     $ npm run build && npm start
 ```
 
-## 🧰 How to run the API
+## 🧰 How to run the WEB APP
+```bash
+    # Install dependencies
+    $ npm install
+```
+```bash
+    # Generate you .env file
+    $ cp .env.example .env
+```
 
+- [Get your mabox account](https://account.mapbox.com/), copy your access token, and fill the .env var ```REACT_APP_MAP_TOKEN```
+
+```bash
+    # Start the application
+    $ expo web 
+```
 
 ## Contributors
 
