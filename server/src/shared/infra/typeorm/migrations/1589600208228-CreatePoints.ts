@@ -1,4 +1,9 @@
-import { MigrationInterface, QueryRunner, Table } from 'typeorm';
+import {
+  MigrationInterface,
+  QueryRunner,
+  Table,
+  TableForeignKey,
+} from 'typeorm';
 
 export default class CreatePoints1589600208228 implements MigrationInterface {
   public async up(queryRunner: QueryRunner): Promise<void> {
@@ -31,7 +36,7 @@ export default class CreatePoints1589600208228 implements MigrationInterface {
             type: 'varchar',
           },
           {
-            name: 'category',
+            name: 'category_id',
             type: 'varchar',
           },
           {
@@ -61,11 +66,22 @@ export default class CreatePoints1589600208228 implements MigrationInterface {
             default: 'now()',
           },
         ],
+        foreignKeys: [
+          new TableForeignKey({
+            columnNames: ['category_id'],
+            referencedColumnNames: ['id'],
+            referencedTableName: 'point_category',
+            name: 'point_category_relation',
+            onDelete: 'CASCADE',
+            onUpdate: 'CASCADE',
+          }),
+        ],
       }),
     );
   }
 
   public async down(queryRunner: QueryRunner): Promise<void> {
+    await queryRunner.dropForeignKey('points', 'point_category_relation');
     await queryRunner.dropTable('points');
   }
 }
