@@ -12,6 +12,7 @@ module.exports =
         cli: {
           migrationsDir: './src/shared/infra/typeorm/migrations',
         },
+        seeds: ['./src/shared/infra/typeorm/seeds/*.ts'],
       }
     : {
         type: 'postgres',
@@ -25,4 +26,5 @@ module.exports =
         cli: {
           migrationsDir: './dist/shared/infra/typeorm/migrations',
         },
+        seeds: ['./dist/shared/infra/typeorm/seeds/*.js'],
       };
