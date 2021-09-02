@@ -7,15 +7,15 @@ import PointsRepository from '../../typeorm/repositories/PointsRepository';
 class PointsController {
   public async create(request: Request, response: Response): Promise<Response> {
     const {
-      address,
-      user_id,
-      type,
+      tags,
       title,
       price,
-      longitude,
+      address,
+      user_id,
       latitude,
+      longitude,
       description,
-      category,
+      category_id,
     } = request.body;
 
     const files = request.files as Express.Multer.File[];
@@ -25,16 +25,16 @@ class PointsController {
     const createPointService = container.resolve(CreatePointService);
 
     const point = await createPointService.execute({
+      category_id,
       description,
       longitude,
       latitude,
-      category,
       user_id,
       address,
       images,
       title,
       price,
-      type,
+      tags,
     });
 
     return response.status(201).json(point);
@@ -43,7 +43,7 @@ class PointsController {
   public async index(_: Request, response: Response): Promise<Response> {
     const pointsRepository = new PointsRepository();
 
-    const points = await pointsRepository.getAllPoints();
+    const points = await pointsRepository.findPoints();
 
     return response.json(points);
   }
