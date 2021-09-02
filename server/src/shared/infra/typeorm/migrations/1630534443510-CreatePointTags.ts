@@ -19,15 +19,6 @@ export class CreatePointTags1630534443510 implements MigrationInterface {
             generationStrategy: 'increment',
           },
           {
-            name: 'name',
-            type: 'varchar',
-            isUnique: true,
-          },
-          {
-            name: 'description',
-            type: 'varchar',
-          },
-          {
             name: 'point_id',
             type: 'uuid',
             isNullable: true,

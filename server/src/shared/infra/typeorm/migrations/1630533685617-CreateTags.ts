@@ -19,10 +19,6 @@ export class CreateTags1630533685617 implements MigrationInterface {
             isUnique: true,
           },
           {
-            name: 'description',
-            type: 'varchar',
-          },
-          {
             name: 'created_at',
             type: 'timestamp',
             default: 'now()',

@@ -40,10 +40,6 @@ export default class CreatePoints1589600208228 implements MigrationInterface {
             type: 'varchar',
           },
           {
-            name: 'type',
-            type: 'varchar',
-          },
-          {
             name: 'address',
             type: 'varchar',
           },
