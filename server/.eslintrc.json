@@ -28,6 +28,7 @@
     "@typescript-eslint"
   ],
   "rules": {
+    "import/prefer-default-export": "off",
     "import/no-unresolved":"off",
     "no-param-reassign":"off",
     "@typescript-eslint/ban-ts-comment":"off",
