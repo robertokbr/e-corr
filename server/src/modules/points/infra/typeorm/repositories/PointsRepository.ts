@@ -11,26 +11,26 @@ class PointsRepository implements IPointsRepository {
 
   public async createPoint({
     address,
-    category,
+    category_id,
+    tag_ids,
     description,
     latitude,
     longitude,
     price,
     title,
-    type,
     user_id,
     pointImages,
   }: ICreatePointDTO) {
     const point = this.ormRepository.create({
-      address,
-      category,
-      description,
-      latitude,
-      longitude,
       price,
       title,
-      type,
       user_id,
+      address,
+      latitude,
+      longitude,
+      category_id,
+      description,
+      tags: tag_ids.map(tag_id => ({ tag_id })),
       pointImages: pointImages.map(image_url => ({
         image_url,
       })),
@@ -41,7 +41,7 @@ class PointsRepository implements IPointsRepository {
     return point;
   }
 
-  public async getAllPoints() {
+  public async findPoints() {
     const points = await this.ormRepository.find();
 
     return points;

@@ -10,7 +10,7 @@ viewsRouter.post('/', async (request: Request, response: Response) => {
 
   await pointViewsRepository.createView(point_id);
 
-  const views = await pointViewsRepository.getNumberOfViews(point_id);
+  const views = await pointViewsRepository.findViewsByPointId(point_id);
 
   return response.status(201).json(views);
 });
@@ -20,7 +20,7 @@ viewsRouter.get('/:point_id', async (request: Request, response: Response) => {
 
   const pointViewsRepository = new PointViewsRepository();
 
-  const views = await pointViewsRepository.getNumberOfViews(point_id);
+  const views = await pointViewsRepository.findViewsByPointId(point_id);
 
   return response.status(201).json(views);
 });

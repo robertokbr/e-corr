@@ -16,7 +16,7 @@ class PointViewsRepository implements IPointViewsRepository {
     return view;
   }
 
-  public async getNumberOfViews(point_id: string) {
+  public async findViewsByPointId(point_id: string) {
     const views = await this.ormRepository.find({
       where: { point_id },
     });
