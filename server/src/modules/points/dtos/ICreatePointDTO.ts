@@ -3,8 +3,8 @@ interface ICreatePointDTO {
   title: string;
   description: string;
   price: string;
-  category: 'Condominio' | 'Apartamento' | 'Casa' | 'Comercial';
-  type: 'Aluguel' | 'Venda';
+  category_id: number;
+  tag_ids: number[];
   address: string;
   longitude: string;
   latitude: string;
