@@ -17,12 +17,14 @@
     "reflect-metadata": "^0.1.13",
     "tsyringe": "^4.4.0",
     "typeorm": "^0.2.31",
+    "typeorm-seeding": "^1.6.1",
     "uuidv4": "^6.2.6"
   },
   "scripts": {
     "dev:server": "ts-node-dev -r tsconfig-paths/register -r dotenv/config --transpile-only src/shared/infra/http/server.ts",
     "dev:typeorm": "ts-node-dev ./node_modules/typeorm/cli.js",
     "typeorm": "ENVIRONMENT=dev ts-node-dev -r tsconfig-paths/register ./node_modules/typeorm/cli.js",
+    "seed:run": "ENVIRONMENT=dev ts-node-dev -r tsconfig-paths/register ./node_modules/typeorm-seeding/dist/cli.js seed",
     "build": "babel src --extensions \".js,.ts\" --out-dir dist --copy-files",
     "start": "node dist/shared/infra/http/server.js",
     "test": "jest"
