@@ -11,12 +11,13 @@ class PointsController {
       title,
       price,
       address,
-      user_id,
       latitude,
       longitude,
       description,
       category_id,
     } = request.body;
+
+    const { id: user_id } = request.user;
 
     const files = request.files as Express.Multer.File[];
 
@@ -34,7 +35,7 @@ class PointsController {
       images,
       title,
       price,
-      tags,
+      tags: tags.split('+'),
     });
 
     return response.status(201).json(point);
