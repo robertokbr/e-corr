@@ -7,7 +7,7 @@ import {
 } from 'typeorm';
 import Point from './Point';
 
-@Entity('point_category')
+@Entity('point_categories')
 class PointCategory {
   @PrimaryGeneratedColumn('increment')
   id: number;

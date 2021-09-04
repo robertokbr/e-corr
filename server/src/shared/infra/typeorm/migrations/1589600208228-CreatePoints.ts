@@ -37,7 +37,7 @@ export default class CreatePoints1589600208228 implements MigrationInterface {
           },
           {
             name: 'category_id',
-            type: 'varchar',
+            type: 'bigint',
           },
           {
             name: 'address',
@@ -66,8 +66,8 @@ export default class CreatePoints1589600208228 implements MigrationInterface {
           new TableForeignKey({
             columnNames: ['category_id'],
             referencedColumnNames: ['id'],
-            referencedTableName: 'point_category',
-            name: 'point_category_relation',
+            referencedTableName: 'point_categories',
+            name: 'point_categories_relation',
             onDelete: 'CASCADE',
             onUpdate: 'CASCADE',
           }),
@@ -77,7 +77,7 @@ export default class CreatePoints1589600208228 implements MigrationInterface {
   }
 
   public async down(queryRunner: QueryRunner): Promise<void> {
-    await queryRunner.dropForeignKey('points', 'point_category_relation');
+    await queryRunner.dropForeignKey('points', 'point_categories_relation');
     await queryRunner.dropTable('points');
   }
 }
