@@ -29,9 +29,9 @@ class PointTag {
   @JoinColumn({ name: 'point_id' })
   point: number;
 
-  @ManyToOne(() => Tag, { eager: true })
+  @ManyToOne(() => Tag, tag => tag.pointTag, { eager: true })
   @JoinColumn({ name: 'tag_id' })
-  tag: number;
+  tag_details: Tag;
 }
 
 export default PointTag;
