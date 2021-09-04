@@ -119,6 +119,10 @@ A Fullstack application that provides a simple way to share and find properties.
     # run migrations
     $ npm run typeorm migration:run 
 ```
+```bash
+    # run database seeds
+    $ npm run seed:run  
+```
 ### Without docker compose
 ```bash
     # Install dependencies 
@@ -126,8 +130,7 @@ A Fullstack application that provides a simple way to share and find properties.
 ```
 ```bash
     # With you do not have a postgres db, that is the command to start a docker postgres
-    docker run --name ecorr_postgres -e POSTGRES_PASSWORD=docker -e POSTGRES_DB=ecorr -p 5432:54
-    32 -d postgres
+    docker run --name ecorr_postgres -e POSTGRES_PASSWORD=ecorr -e POSTGRES_DB=ecorr -p 5432:5432 -d postgres
 ```
 ```bash
     # run migrations
