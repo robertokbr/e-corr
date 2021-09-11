@@ -63,16 +63,15 @@ A Fullstack application that provides a simple way to share and find properties.
 
         Form URL Encoded
 
-        user_id: string,
         address: string,
-        category: string,
+        category_id: string,
         description: string,
         latitude: string,
         longitude: string,
         pictures: Image File Array,
         price: string,
         title: string,
-        type: string,
+        tags: string,
         ```
 
     - Get Points
