@@ -2,7 +2,11 @@ declare type Point = {
   id: string;
   user: User;
   address: string;
-  category: string;
+  category: {
+    id: number;
+    name: string;
+
+  };
   description: string;
   latitude: number;
   longitude: number;
@@ -11,7 +15,11 @@ declare type Point = {
   }>;
   price: string;
   title: string;
-  type: string;
+  tags: Array<{
+    tag_details: {
+      name: string;
+    }
+  }>;
   number: string;
   created_at: string;
 };

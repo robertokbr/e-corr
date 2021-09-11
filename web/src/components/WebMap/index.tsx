@@ -26,10 +26,10 @@ const WebMap: React.FC<WebMapProps> = ({ points }) => {
 
   const handleIcon = useCallback((category: string) => {
     const categorySvg = {
-      casa,
-      comercial,
-      condominio,
-      apartamento,
+      "casa": casa,
+      "comércial": comercial,
+      "condomínio": condominio,
+      "apartamento": apartamento,
     };
 
     return L.icon({
@@ -66,8 +66,6 @@ const WebMap: React.FC<WebMapProps> = ({ points }) => {
 
   const handleNavigate = useCallback(
     async (point: Point) => {
-      await api.post('/views', { point_id: point.id });
-
       navigate('Detail', { point });
     },
     [navigate],
@@ -92,7 +90,7 @@ const WebMap: React.FC<WebMapProps> = ({ points }) => {
           <Marker
             key={point.id}
             position={[point.latitude, point.longitude]}
-            icon={handleIcon(point.category)}
+            icon={handleIcon(point.category.name)}
             onclick={() => handleNavigate(point)}
           />
         ))}

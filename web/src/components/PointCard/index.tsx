@@ -34,9 +34,9 @@ const PointCard: React.FC<{ point: Point }> = ({ point }) => {
       <PointCardImage image={point.pointImages[0].image_url} />
       <S.TextBox>
         <S.Title>
-          {point.type} | {point.title}
+          {point.title}
         </S.Title>
-        <S.SubTitle>{point.category.toUpperCase()}</S.SubTitle>
+        <S.SubTitle>{point.category.name.toUpperCase()}</S.SubTitle>
         <S.Price>R$ {point.price}</S.Price>
         <S.Footer>
           <S.ViewsCounter>Visualizações: {views}</S.ViewsCounter>

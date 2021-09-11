@@ -24,6 +24,7 @@ const DataProvider: React.FC = ({ children }) => {
 
   useEffect(() => {
     api.get<Point[]>('/points').then(response => {
+      console.log(response.data)
       setPoints(response.data);
     });
   }, []);

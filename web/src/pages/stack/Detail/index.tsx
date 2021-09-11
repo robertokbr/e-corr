@@ -40,7 +40,7 @@ const Detail: React.FC = () => {
         </S.BackButton>
         <S.ImagesContainer>
           <FlatList
-            data={point.images}
+            data={point.pointImages}
             onRefresh={() => {}}
             refreshing={false}
             pinchGestureEnabled
@@ -48,21 +48,21 @@ const Detail: React.FC = () => {
             style={{
               maxHeight: 200,
             }}
-            keyExtractor={image => image}
-            renderItem={image => {
+            keyExtractor={image => image.image_url}
+            renderItem={({item: {image_url}}) => {
               return (
                 <S.PointImage
-                  key={image}
+                  key={image_url}
                   source={{
-                    uri: image.item,
+                    uri: image_url,
                   }}
                 />
               );
             }}
           />
           <S.DotIndicatorContainer>
-            {point.images?.map(image => (
-              <S.DotIndicator key={image} />
+            {point.pointImages?.map(({ image_url }) => (
+              <S.DotIndicator key={image_url} />
             ))}
           </S.DotIndicatorContainer>
         </S.ImagesContainer>
@@ -79,11 +79,11 @@ const Detail: React.FC = () => {
           <S.TextContainer>
             <S.DetailsContainer>
               <S.DetailTitle>Categoria</S.DetailTitle>
-              <S.DetailText>{point.category}</S.DetailText>
+              <S.DetailText>{point.category.name}</S.DetailText>
             </S.DetailsContainer>
             <S.DetailsContainer>
               <S.DetailTitle>Tipo</S.DetailTitle>
-              <S.DetailText>{point.type}</S.DetailText>
+              <S.DetailText>{point.tags[0].tag_details.name}</S.DetailText>
             </S.DetailsContainer>
           </S.TextContainer>
           <S.Separtor />
