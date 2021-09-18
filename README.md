@@ -1,5 +1,5 @@
 <h1 align="center">
-    <img src="https://github.com/robertokbr/E-Corr/blob/main/mobile/assets/icon.png" width="100px" /><br>
+    <img src="https://github.com/robertokbr/E-Corr/blob/main/web/assets/icon.png" width="100px" /><br>
     <br>
   <a href="https://e-corr.netlify.app/">
     E-Corr
