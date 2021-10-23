@@ -61,6 +61,8 @@ class CreatePointService {
 
     const tag_names = tags.map(tag => tag.toLowerCase());
 
+    tag_names.push(...title.toLowerCase().split(' '));
+
     const existent_tags = await this.tagsRepository.findTagsByNames(tag_names);
 
     const existent_tag_names = existent_tags.map(tag => tag.name);
