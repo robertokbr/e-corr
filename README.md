@@ -1,5 +1,5 @@
 <h1 align="center">
-    <img src="https://github.com/robertokbr/E-Corr/blob/main/web/assets/icon.png" width="100px" /><br>
+    <img src="https://github.com/robertokbr/E-Corr/blob/main/mobile/assets/icon.png" width="100px" /><br>
     <br>
   <a href="https://e-corr.netlify.app/">
     E-Corr
@@ -8,14 +8,16 @@
 
 
 # E-Corr
-A Fullstack application that provides a simple way to share and find properties.
+- 
+## 🏗️ Architecture
+- Node API REST + PWA frotend with React and Expo.   
 
 <img  src="https://github.com/robertokbr/e-corr/blob/main/.Github/map.png" />
 <img  src="https://github.com/robertokbr/e-corr/blob/main/.Github/details.png" width="100%"/>
 
 ## 🤖 Backend beta
 
-- Usuário
+- User routes
     - Create User
 
         ```jsx
@@ -55,7 +57,7 @@ A Fullstack application that provides a simple way to share and find properties.
         avatar: Image File
         ```
 
-- Ponto
+- Point routes
     - Create Point
 
         ```jsx
@@ -63,15 +65,15 @@ A Fullstack application that provides a simple way to share and find properties.
 
         Form URL Encoded
 
-        address: string,
         category_id: string,
+        address: string,
         description: string,
         latitude: string,
         longitude: string,
-        pictures: Image File Array,
+        pictures: Array<Image File>,
         price: string,
         title: string,
-        tags: string,
+        tags: Array<string>,
         ```
 
     - Get Points
@@ -80,7 +82,7 @@ A Fullstack application that provides a simple way to share and find properties.
         GET '/points'
         ```
 
-- Point Views
+
     - Create Point View
 
         ```jsx
