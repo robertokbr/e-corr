@@ -8,11 +8,9 @@ viewsRouter.post('/', async (request: Request, response: Response) => {
 
   const pointViewsRepository = new PointViewsRepository();
 
-  await pointViewsRepository.createView(point_id);
+  const point = await pointViewsRepository.createView(point_id);
 
-  const views = await pointViewsRepository.findViewsByPointId(point_id);
-
-  return response.status(201).json(views);
+  return response.status(201).json(point);
 });
 
 viewsRouter.get('/:point_id', async (request: Request, response: Response) => {
