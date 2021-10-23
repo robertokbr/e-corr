@@ -8,14 +8,14 @@
 
 
 # E-Corr
-- 
+- A simple application to sell and find properties
 ## 🏗️ Architecture
 - Node API REST + PWA frotend with React and Expo.   
 
 <img  src="https://github.com/robertokbr/e-corr/blob/main/.Github/map.png" />
 <img  src="https://github.com/robertokbr/e-corr/blob/main/.Github/details.png" width="100%"/>
 
-## 🤖 Backend beta
+## 🤖 Backend Documentation
 
 - User routes
     - Create User
@@ -100,9 +100,6 @@
         ```jsx
         GET /views/:point_id
         ```
-## 🏗️ To do
-
-- Add entity ```attributes```( a Point relation ).
 
 
 ## 🧰 How to run the API
