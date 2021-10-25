@@ -8,14 +8,17 @@
 
 
 # E-Corr
-- A simple application to sell and find properties
+- A simple app that aims to provide an easy experience in selling and buying properties.
+
 ## 🏗️ Architecture
-- Node API REST + PWA frotend with React and Expo.   
+- Node API REST with express. 
+- PWA frotend with React and Expo.
+- Postgres database with docker.   
 
 <img  src="https://github.com/robertokbr/e-corr/blob/main/.Github/map.png" />
 <img  src="https://github.com/robertokbr/e-corr/blob/main/.Github/details.png" width="100%"/>
 
-## 🤖 Backend Documentation
+## 🤖 API Documentation
 
 - User routes
     - Create User
@@ -36,15 +39,15 @@
     - Auth User
 
         ```jsx
-        POST **'/sessions'
+        POST '/sessions'
 
-        JSON BODY
+        JSON BODY:
 
         { 
         	"email": "email@gmail.com", 
         	"password": "senha"
         	
-        }**
+        }
         ```
 
     - Update User Avatar
@@ -63,7 +66,7 @@
         ```jsx
         POST '/points'
 
-        Form URL Encoded
+        Form URL Encoded:
 
         category_id: string,
         address: string,
