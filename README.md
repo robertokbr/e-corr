@@ -5,9 +5,6 @@
     E-Corr
   </a>
 </h1>
-
-
-# E-corr
 - A simple app that aims to provide an easy experience in selling and buying properties.
 
 ## 🏗️ Architecture
@@ -114,15 +111,7 @@
 ```
 ```bash
     # Come inside the server container
-    $ docker exec -it ecorr /bin/bash
-```
-```bash
-    # run migrations
-    $ npm run typeorm migration:run 
-```
-```bash
-    # run database seeds
-    $ npm run seed:run  
+    $ docker exec ecorr npm run typeorm migration:run && npm run seed:run 
 ```
 ### Without docker compose
 ```bash
